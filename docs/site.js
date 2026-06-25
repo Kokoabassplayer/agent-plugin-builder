@@ -23,9 +23,15 @@ function updateCommand() {
   const selectedHarnesses = harnessInputs
     .filter((input) => input.checked)
     .map((input) => input.value);
-  const harnessFlag = selectedHarnesses.length ? ` --agents ${selectedHarnesses.join(",")}` : "";
+  const installLines = selectedHarnesses.length
+    ? selectedHarnesses.map((target) => `node packages/installer/bin/install.mjs --target ${target}`)
+    : ["# Select at least one target harness"];
 
-  generatedCommand.textContent = `npx github:Kokoabassplayer/agent-plugin-builder create ${pluginName} --description "${quote(description)}"${harnessFlag}`;
+  generatedCommand.textContent = [
+    `npx github:Kokoabassplayer/agent-plugin-builder create ${pluginName} --description "${quote(description)}"`,
+    `cd ${pluginName}`,
+    ...installLines,
+  ].join("\n");
 }
 
 async function copyText(text) {

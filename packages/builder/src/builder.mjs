@@ -66,7 +66,7 @@ function skill({ name, description }) {
 }
 
 function readme({ name, description }) {
-  return `# ${titleCase(name)}\n\n${description}\n\n## Install\n\nFrom GitHub during development:\n\n\`\`\`bash\nnpx github:<owner>/${name}\n\`\`\`\n\nAfter npm publishing:\n\n\`\`\`bash\nnpx @${name}/install@latest\n\`\`\`\n\n## Structure\n\n\`\`\`text\nskills/\npackages/cli/\npackages/installer/\nadapters/\ninstallers/\ndocs/\ntest/\n\`\`\`\n\n## Test\n\n\`\`\`bash\nnpm test\n\`\`\`\n`;
+  return `# ${titleCase(name)}\n\n${description}\n\n## How To Use\n\nInstall from GitHub during development:\n\n\`\`\`bash\nnpx github:<owner>/${name}\n\`\`\`\n\nOr install from npm after publishing:\n\n\`\`\`bash\nnpx @${name}/install@latest\n\`\`\`\n\nFrom a local checkout, install the skill into your target harness:\n\n\`\`\`bash\nnode packages/installer/bin/install.mjs --target codex\nnode packages/installer/bin/install.mjs --target claude-code\nnode packages/installer/bin/install.mjs --target openclaw\nnode packages/installer/bin/install.mjs --target gemini-cli\nnode packages/installer/bin/install.mjs --target generic\n\`\`\`\n\nThen start your agent and ask it to use the skill:\n\n\`\`\`text\nUse $${name} to help with this workflow.\n\`\`\`\n\n## Structure\n\n\`\`\`text\nskills/\npackages/cli/\npackages/installer/\nadapters/\ninstallers/\ndocs/\ntest/\n\`\`\`\n\n## Test\n\n\`\`\`bash\nnpm test\n\`\`\`\n`;
 }
 
 function cliSource({ name }) {
@@ -94,11 +94,11 @@ function powerShellInstaller() {
 }
 
 function docsHtml({ name, description }) {
-  return `<!doctype html>\n<html lang="en">\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${titleCase(name)}</title><link rel="stylesheet" href="styles.css"></head>\n<body><main><h1>${titleCase(name)}</h1><p>${description}</p><pre>npx github:&lt;owner&gt;/${name}</pre></main></body>\n</html>\n`;
+  return `<!doctype html>\n<html lang="en">\n<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${titleCase(name)}</title><link rel="stylesheet" href="styles.css"></head>\n<body><main><h1>${titleCase(name)}</h1><p>${description}</p><h2>Use this skill</h2><pre>npx github:&lt;owner&gt;/${name}</pre><pre>node packages/installer/bin/install.mjs --target codex</pre><pre>Use $${name} to help with this workflow.</pre></main></body>\n</html>\n`;
 }
 
 function docsCss() {
-  return `body{margin:0;font-family:Inter,ui-sans-serif,system-ui,sans-serif;background:#f7f8fb;color:#172033}main{max-width:960px;margin:0 auto;padding:72px 24px}h1{font-size:clamp(44px,7vw,88px);line-height:.96;margin:0 0 24px}p{font-size:20px;color:#506174;max-width:720px}pre{background:#111827;color:#e5edf6;padding:18px;border-radius:8px;overflow:auto}\n`;
+  return `:root{color-scheme:dark}*{box-sizing:border-box}body{margin:0;min-width:320px;font-family:Aptos,"Segoe UI",ui-sans-serif,system-ui,sans-serif;background:#0b0d10;color:#f7f3eb;line-height:1.5}main{max-width:960px;margin:0 auto;padding:72px 24px}h1{font-size:72px;line-height:.96;margin:0 0 24px}h2{font-size:28px;margin:42px 0 16px}p{font-size:20px;color:#a5a39e;max-width:720px}pre{background:#101216;color:#f7f3eb;padding:18px;border:1px solid #292d35;border-radius:8px;overflow:auto}@media (max-width:720px){main{padding:48px 18px}h1{font-size:48px}}\n`;
 }
 
 function json(value) {

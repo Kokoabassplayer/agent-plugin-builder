@@ -56,6 +56,11 @@ describe('agent plugin builder', () => {
     assert.match(skill, /^---\nname: review-proof-kit\ndescription:/);
     assert.match(skill, /Capture proof for reviewers\./);
 
+    const readme = await readFile(path.join(result.root, 'README.md'), 'utf8');
+    assert.match(readme, /## How To Use/);
+    assert.match(readme, /node packages\/installer\/bin\/install\.mjs --target codex/);
+    assert.match(readme, /Use \$review-proof-kit to help with this workflow\./);
+
     const manifest = JSON.parse(await readFile(path.join(result.root, 'adapters/claude-code/.claude-plugin/plugin.json'), 'utf8'));
     assert.equal(manifest.name, 'review-proof-kit');
     assert.equal(manifest.description, 'Capture proof for reviewers.');

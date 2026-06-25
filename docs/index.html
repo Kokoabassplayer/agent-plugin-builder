@@ -9,7 +9,8 @@
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://kokoabassplayer.github.io/agent-plugin-builder/">
   <title>Agent Plugin Builder</title>
-  <link rel="stylesheet" href="styles.css?v=20260625b">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=20260625c">
 </head>
 <body>
   <div class="page-noise" aria-hidden="true"></div>
@@ -21,6 +22,7 @@
         <span>Agent Plugin Builder</span>
       </a>
       <div class="nav-links">
+        <a href="#usage">Use</a>
         <a href="#outputs">Outputs</a>
         <a href="#builder">Builder</a>
         <a href="#examples">Examples</a>
@@ -35,9 +37,10 @@
         <p class="eyebrow">Plugin creation kit</p>
         <h1 id="hero-title">Agent Plugin Builder</h1>
         <p class="hero-subtitle">The repo generator for AI agent plugins.</p>
-        <p class="hero-body">Turn a repeatable workflow into an installable skill package with adapters, docs, tests, and one-command setup.</p>
+        <p class="hero-body">Turn a repeatable workflow into an installable skill package with adapters, docs, tests, and clear command-line setup.</p>
         <div class="hero-actions">
-          <a class="button primary" href="#builder">Build command</a>
+          <a class="button primary" href="#usage">Use now</a>
+          <a class="button secondary" href="#builder">Build command</a>
           <a class="button secondary" href="https://github.com/Kokoabassplayer/agent-plugin-builder">View GitHub</a>
         </div>
       </div>
@@ -47,8 +50,8 @@
           <img src="assets/agent-plugin-builder-hero.png" width="1536" height="1024" alt="A dark developer workbench for planning an agent plugin repository" fetchpriority="high" decoding="async">
         </figure>
         <div class="hero-command" aria-label="Install command preview">
-          <span>one command</span>
-          <code>npx github:Kokoabassplayer/agent-plugin-builder create my-plugin</code>
+          <span>quick start</span>
+          <code>npx github:Kokoabassplayer/agent-plugin-builder create visual-evidence-kit</code>
         </div>
         <figure class="hero-frame hero-frame-float">
           <img src="assets/agent-plugin-builder-detail.png" width="1536" height="1024" alt="Plugin architecture notes and modular adapter blocks" decoding="async">
@@ -56,6 +59,48 @@
       </div>
     </section>
 
+    <section class="usage shell" id="usage" aria-labelledby="usage-title">
+      <div class="usage-copy">
+        <p class="eyebrow">How to use</p>
+        <h2 id="usage-title">Create the repo. Install the skill. Call it by name.</h2>
+        <p>Agent Plugin Builder is a command-line generator. It creates the plugin repo first; the generated repo then installs the skill into Codex, Claude Code, OpenClaw, Gemini CLI, or a generic Agent Skills folder.</p>
+      </div>
+
+      <div class="usage-steps">
+        <article class="usage-card">
+          <div class="usage-card-head">
+            <span>01</span>
+            <button class="copy-button" type="button" data-copy-target="usage-create-command">Copy</button>
+          </div>
+          <h3>Create a plugin repo</h3>
+          <pre><code id="usage-create-command">npx github:Kokoabassplayer/agent-plugin-builder create visual-evidence-kit --description "Capture proof for reviewers."</code></pre>
+        </article>
+
+        <article class="usage-card">
+          <div class="usage-card-head">
+            <span>02</span>
+            <button class="copy-button" type="button" data-copy-target="usage-install-command">Copy</button>
+          </div>
+          <h3>Install the generated skill</h3>
+          <p>Run the target line for your harness from inside the generated repo.</p>
+          <pre><code id="usage-install-command">cd visual-evidence-kit
+node packages/installer/bin/install.mjs --target codex
+node packages/installer/bin/install.mjs --target claude-code
+node packages/installer/bin/install.mjs --target openclaw
+node packages/installer/bin/install.mjs --target gemini-cli</code></pre>
+        </article>
+
+        <article class="usage-card">
+          <div class="usage-card-head">
+            <span>03</span>
+            <button class="copy-button" type="button" data-copy-target="usage-prompt-command">Copy</button>
+          </div>
+          <h3>Use it in your agent</h3>
+          <p>Open a fresh agent session after installing, then invoke the skill by name in your prompt.</p>
+          <pre><code id="usage-prompt-command">Use $visual-evidence-kit to capture visual evidence for this PR.</code></pre>
+        </article>
+      </div>
+    </section>
     <section class="sponsors shell" aria-label="What this project helps create">
       <h2>Build the repo around the skill.</h2>
       <div class="sponsor-grid">
@@ -144,8 +189,8 @@ docs/index.html
     <section class="builder shell" id="builder" aria-labelledby="builder-title">
       <div class="builder-copy">
         <p class="eyebrow">Command builder</p>
-        <h2 id="builder-title">Create the install command before you leave the page.</h2>
-        <p>Choose the plugin name and description. The command updates instantly and can be copied into any terminal.</p>
+        <h2 id="builder-title">Create the terminal sequence before you leave the page.</h2>
+        <p>Choose the plugin name, description, and target harnesses. The terminal sequence updates instantly and can be copied into any terminal.</p>
       </div>
 
       <div class="builder-panel">
@@ -172,7 +217,11 @@ docs/index.html
             <span>terminal</span>
             <button class="copy-button" type="button" data-copy-target="generated-command">Copy</button>
           </div>
-          <pre><code id="generated-command">npx github:Kokoabassplayer/agent-plugin-builder create visual-evidence-kit --description "Capture proof for reviewers"</code></pre>
+          <pre><code id="generated-command">npx github:Kokoabassplayer/agent-plugin-builder create visual-evidence-kit --description "Capture proof for reviewers"
+cd visual-evidence-kit
+node packages/installer/bin/install.mjs --target codex
+node packages/installer/bin/install.mjs --target claude-code
+node packages/installer/bin/install.mjs --target openclaw</code></pre>
         </div>
       </div>
     </section>
@@ -210,12 +259,13 @@ docs/index.html
     <a class="brand footer-brand" href="#top"><span class="brand-mark" aria-hidden="true">AP</span><span>Agent Plugin Builder</span></a>
     <nav aria-label="Footer navigation">
       <a href="#outputs">Outputs</a>
+      <a href="#usage">Use</a>
       <a href="#builder">Builder</a>
       <a href="#examples">Examples</a>
       <a href="https://github.com/Kokoabassplayer/agent-plugin-builder">GitHub</a>
     </nav>
   </footer>
 
-  <script src="site.js?v=20260625b" defer></script>
+  <script src="site.js?v=20260625c" defer></script>
 </body>
 </html>

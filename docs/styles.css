@@ -172,6 +172,9 @@ input {
 
 .hero-copy,
 .hero-gallery,
+.usage-copy,
+.usage-steps,
+.usage-card,
 .works-copy,
 .agent-board,
 .outputs-copy,
@@ -399,7 +402,79 @@ input:focus-visible {
   font-size: 18px;
   font-weight: 780;
 }
+.usage {
+  display: grid;
+  grid-template-columns: minmax(0, 0.82fr) minmax(520px, 1.18fr);
+  gap: 58px;
+  align-items: start;
+  padding: 100px 0 86px;
+}
 
+.usage-copy {
+  position: sticky;
+  top: 112px;
+}
+
+.usage-copy h2 {
+  margin-bottom: 18px;
+  font-size: 64px;
+  line-height: 0.96;
+  font-weight: 860;
+}
+
+.usage-copy p {
+  max-width: 610px;
+  color: var(--muted);
+  font-size: 20px;
+}
+
+.usage-steps {
+  display: grid;
+  gap: 14px;
+}
+
+.usage-card {
+  border: 1px solid rgb(247 243 235 / 10%);
+  border-radius: var(--radius);
+  padding: 22px;
+  background: rgb(16 18 22 / 76%);
+  box-shadow: 0 26px 74px rgb(0 0 0 / 24%);
+}
+
+.usage-card-head {
+  min-height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.usage-card-head span {
+  color: var(--accent);
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 13px;
+  font-weight: 780;
+}
+
+.usage-card h3 {
+  margin-bottom: 12px;
+  font-size: 25px;
+}
+
+.usage-card p {
+  margin-bottom: 16px;
+  color: var(--muted);
+}
+
+.usage-card pre {
+  margin: 0;
+  overflow: auto;
+  border: 1px solid rgb(247 243 235 / 10%);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  background: #07090c;
+}
 .works {
   display: grid;
   grid-template-columns: minmax(0, 0.9fr) minmax(460px, 1.1fr);
@@ -409,6 +484,7 @@ input:focus-visible {
 }
 
 .works h2,
+.usage-copy h2,
 .outputs h2,
 .builder h2,
 .examples h2,
@@ -756,6 +832,9 @@ input:focus-visible {
   .hero-copy,
   .hero-frame-main,
   .hero-command,
+  .usage-copy,
+  .usage-steps,
+  .usage-card,
   .hero-frame-float,
   .sponsors,
   .works-copy,
@@ -797,6 +876,7 @@ input:focus-visible {
 
 @media (max-width: 1120px) {
   .hero,
+  .usage,
   .works,
   .output-layout,
   .builder,
@@ -819,6 +899,7 @@ input:focus-visible {
   }
 
   .works h2,
+  .usage-copy h2,
   .outputs h2,
   .builder h2,
   .examples h2,
@@ -934,6 +1015,7 @@ input:focus-visible {
   }
 
   .works,
+  .usage,
   .outputs,
   .builder,
   .support {
@@ -941,6 +1023,7 @@ input:focus-visible {
   }
 
   .works h2,
+  .usage-copy h2,
   .outputs h2,
   .builder h2,
   .examples h2,
@@ -951,6 +1034,10 @@ input:focus-visible {
   .agent-board article,
   .output-list article {
     grid-template-columns: 1fr;
+  }
+
+  .usage-copy {
+    position: static;
   }
 
   .manifesto-inner {

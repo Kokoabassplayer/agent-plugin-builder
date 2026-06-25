@@ -4,21 +4,39 @@ Scaffold cross-harness AI plugins with Agent Skills, adapters, installers, docs,
 
 Project site: https://kokoabassplayer.github.io/agent-plugin-builder/
 
-## Install And Use
+## How To Use
 
-From GitHub today:
+Prerequisite: Node.js 20 or newer.
 
-```bash
-npx github:Kokoabassplayer/agent-plugin-builder create my-plugin
-```
-
-With a description:
+Create a plugin repo from GitHub:
 
 ```bash
-npx github:Kokoabassplayer/agent-plugin-builder create review-proof-kit --description "Capture proof for reviewers."
+npx github:Kokoabassplayer/agent-plugin-builder create visual-evidence-kit --description "Capture proof for reviewers."
 ```
 
-Local development:
+Enter the generated repo:
+
+```bash
+cd visual-evidence-kit
+```
+
+Install the generated skill into the agent harness you use:
+
+```bash
+node packages/installer/bin/install.mjs --target codex
+node packages/installer/bin/install.mjs --target claude-code
+node packages/installer/bin/install.mjs --target openclaw
+node packages/installer/bin/install.mjs --target gemini-cli
+node packages/installer/bin/install.mjs --target generic
+```
+
+Then start your agent and ask it to use the skill:
+
+```text
+Use $visual-evidence-kit to capture visual evidence for this PR.
+```
+
+For local development of this builder repo:
 
 ```bash
 node packages/builder/bin/agent-plugin-builder.mjs create my-plugin --description "My cross-harness plugin."
