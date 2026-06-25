@@ -1,0 +1,29 @@
+{
+  "name": "agent-plugin-builder",
+  "version": "0.1.0",
+  "description": "Scaffold cross-harness AI plugins with Agent Skills, adapters, installers, docs, and tests.",
+  "type": "module",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kokoabassplayer/agent-plugin-builder.git"
+  },
+  "homepage": "https://kokoabassplayer.github.io/agent-plugin-builder/",
+  "bin": {
+    "agent-plugin-builder": "./packages/builder/bin/agent-plugin-builder.mjs"
+  },
+  "scripts": {
+    "test": "node --test packages/builder/test/*.test.mjs",
+    "check": "node --check packages/builder/src/builder.mjs && node --check packages/builder/bin/agent-plugin-builder.mjs",
+    "create:example": "node packages/builder/bin/agent-plugin-builder.mjs create example-plugin --description \"Example cross-harness plugin.\" --dir .tmp"
+  },
+  "files": [
+    "packages/",
+    "skills/",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  }
+}

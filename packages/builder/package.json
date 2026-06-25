@@ -1,0 +1,13 @@
+{
+  "name": "@agent-plugin-builder/core",
+  "version": "0.1.0",
+  "description": "Core scaffolder for cross-harness AI plugin projects.",
+  "type": "module",
+  "license": "MIT",
+  "bin": {
+    "agent-plugin-builder": "./bin/agent-plugin-builder.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

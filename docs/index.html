@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Scaffold cross-harness AI plugins with Agent Skills, adapters, installers, docs, and tests.">
+  <title>Agent Plugin Builder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="shell nav">
+      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span>Agent Plugin Builder</span></a>
+      <div class="links">
+        <a href="#install">Install</a>
+        <a href="#structure">Structure</a>
+        <a href="https://github.com/Kokoabassplayer/agent-plugin-builder">GitHub</a>
+        <a href="https://github.com/sponsors/Kokoabassplayer">Sponsor</a>
+      </div>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="hero shell">
+      <div>
+        <p class="eyebrow">Cross-harness AI tooling</p>
+        <h1>Build once. Ship to every AI harness.</h1>
+        <p class="lead">Scaffold Agent Skills projects with adapters for Claude Code, Codex, OpenClaw, Gemini CLI, and generic skill-compatible agents.</p>
+        <div class="actions">
+          <a class="button primary" href="#install">Install</a>
+          <a class="button secondary" href="https://github.com/Kokoabassplayer/agent-plugin-builder">View on GitHub</a>
+        </div>
+      </div>
+      <div class="terminal" aria-label="Example command">
+        <pre><code>npx github:Kokoabassplayer/agent-plugin-builder create my-plugin
+
+creates skills/, packages/, adapters/, installers/, docs/, tests/</code></pre>
+      </div>
+    </section>
+    <section class="band">
+      <div class="shell split">
+        <h2>Agent Skills stay portable.</h2>
+        <p>Harness-specific plugin files are adapters. The generated project keeps the reusable skill instructions and deterministic scripts at the center.</p>
+      </div>
+    </section>
+    <section class="section shell" id="install">
+      <h2>One command</h2>
+      <pre><code>npx github:Kokoabassplayer/agent-plugin-builder create review-proof-kit --description "Capture proof for reviewers."</code></pre>
+    </section>
+    <section class="section shell" id="structure">
+      <h2>Generated structure</h2>
+      <div class="grid">
+        <article><h3>Skills core</h3><p>Valid `SKILL.md` plus UI metadata and room for scripts, references, and assets.</p></article>
+        <article><h3>Harness adapters</h3><p>Starter files for Claude Code, Codex, OpenClaw, Gemini CLI, and generic Agent Skills.</p></article>
+        <article><h3>Installer package</h3><p>Node-first installer with shell and PowerShell wrappers for Windows, macOS, and Linux.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer shell"><span>MIT licensed.</span><a href="https://github.com/Kokoabassplayer/agent-plugin-builder">GitHub repository</a></footer>
+</body>
+</html>

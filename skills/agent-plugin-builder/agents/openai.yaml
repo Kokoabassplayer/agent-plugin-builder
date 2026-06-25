@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Plugin Builder"
+  short_description: "Scaffold cross-harness AI plugins"
+  default_prompt: "Use $agent-plugin-builder to scaffold a cross-harness AI plugin project."
