@@ -1,6 +1,7 @@
 import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { detectTargets, installAgentPluginBuilder, normalizeTargets, parseInstallArgs } from '../../installer/src/install.mjs';
 
 export function normalizePluginName(input) {
   const name = String(input || '')
@@ -115,10 +116,26 @@ function mitLicense() {
 
 export async function runCli(argv = process.argv.slice(2)) {
   const [command, rawName, ...rest] = argv;
+
+  if (command === 'install') {
+    const args = parseInstallArgs([rawName, ...rest].filter(Boolean));
+    const target = args.target || 'auto';
+    const targets = target === 'auto' ? detectTargets() : normalizeTargets(target);
+    const result = await installAgentPluginBuilder({
+      targets,
+      dest: args.dest,
+      dryRun: Boolean(args['dry-run']),
+    });
+    console.log(result.dryRun ? 'Agent Plugin Builder dry run complete.' : 'Agent Plugin Builder skill installed.');
+    return result;
+  }
+
   if (command !== 'create' || !rawName) {
     console.log('Usage: agent-plugin-builder create <plugin-name> [--description text] [--dir path]');
+    console.log('Usage: agent-plugin-builder install [--target auto|all|codex|claude-code|openclaw|gemini-cli|generic] [--dest path] [--dry-run]');
     return { help: true };
   }
+
   const descriptionIndex = rest.indexOf('--description');
   const dirIndex = rest.indexOf('--dir');
   const result = await createPluginProject({

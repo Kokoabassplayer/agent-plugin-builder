@@ -9,13 +9,18 @@
     "url": "git+https://github.com/Kokoabassplayer/agent-plugin-builder.git"
   },
   "homepage": "https://kokoabassplayer.github.io/agent-plugin-builder/",
+  "funding": {
+    "type": "github",
+    "url": "https://github.com/sponsors/Kokoabassplayer"
+  },
   "bin": {
     "agent-plugin-builder": "./packages/builder/bin/agent-plugin-builder.mjs"
   },
   "scripts": {
     "test": "node --test packages/builder/test/*.test.mjs",
-    "check": "node --check packages/builder/src/builder.mjs && node --check packages/builder/bin/agent-plugin-builder.mjs",
-    "create:example": "node packages/builder/bin/agent-plugin-builder.mjs create example-plugin --description \"Example cross-harness plugin.\" --dir .tmp"
+    "check": "node --check packages/builder/src/builder.mjs && node --check packages/builder/bin/agent-plugin-builder.mjs && node --check packages/installer/src/install.mjs && node --check packages/installer/bin/install.mjs",
+    "create:example": "node packages/builder/bin/agent-plugin-builder.mjs create example-plugin --description \"Example cross-harness plugin.\" --dir .tmp",
+    "install:dry-run": "node packages/builder/bin/agent-plugin-builder.mjs install --target all --dry-run"
   },
   "files": [
     "packages/",

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
+  <title id="title">Agent Plugin Builder terminal workflow</title>
+  <desc id="desc">Terminal commands install the builder skill, then create a generated plugin repo with skills, adapters, installer, docs, and tests.</desc>
+  <rect width="1536" height="1024" fill="#08090d"/>
+  <circle cx="1220" cy="190" r="260" fill="#ffdf6e" opacity="0.11"/>
+  <circle cx="240" cy="830" r="260" fill="#f36d38" opacity="0.12"/>
+  <rect x="118" y="112" width="1300" height="800" rx="38" fill="#101216" stroke="#292d35" stroke-width="2"/>
+  <rect x="118" y="112" width="1300" height="78" rx="38" fill="#171a20"/>
+  <circle cx="174" cy="151" r="11" fill="#f36d38"/>
+  <circle cx="214" cy="151" r="11" fill="#ffdf6e"/>
+  <circle cx="254" cy="151" r="11" fill="#93f0bc"/>
+  <text x="326" y="160" fill="#a5a39e" font-family="Cascadia Mono, Consolas, monospace" font-size="22">universal-plugin-creation</text>
+
+  <g font-family="Cascadia Mono, Consolas, monospace" font-size="25">
+    <text x="170" y="260" fill="#ffdf6e">$</text>
+    <text x="208" y="260" fill="#f7f3eb">npx github:Kokoabassplayer/agent-plugin-builder install --target codex</text>
+    <text x="170" y="318" fill="#93f0bc">Agent Plugin Builder skill installed.</text>
+    <text x="170" y="398" fill="#ffdf6e">$</text>
+    <text x="208" y="398" fill="#f7f3eb">Use $agent-plugin-builder to create a finance-proof-kit plugin.</text>
+    <text x="170" y="478" fill="#ffdf6e">$</text>
+    <text x="208" y="478" fill="#f7f3eb">npx github:Kokoabassplayer/agent-plugin-builder create finance-proof-kit</text>
+  </g>
+
+  <g transform="translate(170 560)" font-family="Cascadia Mono, Consolas, monospace" font-size="24">
+    <rect x="0" y="0" width="542" height="268" rx="24" fill="#06070a" stroke="#292d35"/>
+    <text x="32" y="54" fill="#ffdf6e">generated repo</text>
+    <text x="32" y="106" fill="#f7f3eb">skills/finance-proof-kit/SKILL.md</text>
+    <text x="32" y="150" fill="#f7f3eb">packages/installer/bin/install.mjs</text>
+    <text x="32" y="194" fill="#f7f3eb">adapters/codex/ADAPTER.md</text>
+    <text x="32" y="238" fill="#f7f3eb">docs/index.html + tests</text>
+  </g>
+
+  <g transform="translate(790 560)" font-family="Aptos, Segoe UI, Arial, sans-serif">
+    <rect x="0" y="0" width="486" height="268" rx="24" fill="#06070a" stroke="#292d35"/>
+    <text x="42" y="68" fill="#f7f3eb" font-size="38" font-weight="850">One command creates</text>
+    <text x="42" y="118" fill="#a5a39e" font-size="25">a repo humans can read</text>
+    <text x="42" y="162" fill="#a5a39e" font-size="25">and agents can install.</text>
+    <rect x="42" y="196" width="256" height="48" rx="24" fill="#ffdf6e"/>
+    <text x="170" y="228" text-anchor="middle" fill="#141006" font-size="20" font-weight="800">Codex to Claude</text>
+  </g>
+</svg>

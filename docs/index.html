@@ -10,7 +10,7 @@
   <meta property="og:url" content="https://kokoabassplayer.github.io/agent-plugin-builder/">
   <title>Agent Plugin Builder</title>
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=20260625c">
+  <link rel="stylesheet" href="styles.css?v=20260625g">
 </head>
 <body>
   <div class="page-noise" aria-hidden="true"></div>
@@ -27,6 +27,7 @@
         <a href="#builder">Builder</a>
         <a href="#examples">Examples</a>
         <a href="https://github.com/Kokoabassplayer/agent-plugin-builder">GitHub</a>
+        <a href="#sponsor">Sponsor</a>
       </div>
     </nav>
   </header>
@@ -36,25 +37,24 @@
       <div class="hero-copy">
         <p class="eyebrow">Plugin creation kit</p>
         <h1 id="hero-title">Agent Plugin Builder</h1>
-        <p class="hero-subtitle">The repo generator for AI agent plugins.</p>
-        <p class="hero-body">Turn a repeatable workflow into an installable skill package with adapters, docs, tests, and clear command-line setup.</p>
+        <p class="hero-subtitle">Universal plugin creation for AI agents.</p>
+        <p class="hero-body">Install the builder as a skill, then ask your agent to scaffold shareable plugins with adapters, installers, docs, tests, and GitHub Pages.</p>
         <div class="hero-actions">
           <a class="button primary" href="#usage">Use now</a>
-          <a class="button secondary" href="#builder">Build command</a>
-          <a class="button secondary" href="https://github.com/Kokoabassplayer/agent-plugin-builder">View GitHub</a>
+          <a class="button secondary" href="https://github.com/sponsors/Kokoabassplayer">Sponsor</a>
         </div>
       </div>
 
       <div class="hero-gallery" aria-label="Agent Plugin Builder product preview">
         <figure class="hero-frame hero-frame-main">
-          <img src="assets/agent-plugin-builder-hero.png" width="1536" height="1024" alt="A dark developer workbench for planning an agent plugin repository" fetchpriority="high" decoding="async">
+          <img src="assets/universal-plugin-builder-hero.svg" width="1536" height="1024" alt="Universal plugin creation flow from one Agent Skill core to adapters, installers, docs, tests, and funding" fetchpriority="high" decoding="async">
         </figure>
         <div class="hero-command" aria-label="Install command preview">
-          <span>quick start</span>
-          <code>npx github:Kokoabassplayer/agent-plugin-builder create visual-evidence-kit</code>
+          <span>install first</span>
+          <code>npx github:Kokoabassplayer/agent-plugin-builder install --target codex</code>
         </div>
         <figure class="hero-frame hero-frame-float">
-          <img src="assets/agent-plugin-builder-detail.png" width="1536" height="1024" alt="Plugin architecture notes and modular adapter blocks" decoding="async">
+          <img src="assets/universal-plugin-builder-detail.svg" width="1536" height="1024" alt="Terminal workflow for installing Agent Plugin Builder and generating a plugin repository" decoding="async">
         </figure>
       </div>
     </section>
@@ -62,42 +62,48 @@
     <section class="usage shell" id="usage" aria-labelledby="usage-title">
       <div class="usage-copy">
         <p class="eyebrow">How to use</p>
-        <h2 id="usage-title">Create the repo. Install the skill. Call it by name.</h2>
-        <p>Agent Plugin Builder is a command-line generator. It creates the plugin repo first; the generated repo then installs the skill into Codex, Claude Code, OpenClaw, Gemini CLI, or a generic Agent Skills folder.</p>
+        <h2 id="usage-title">Install the builder. Ask your agent. Generate plugins.</h2>
+        <p>Install Agent Plugin Builder into your harness first. After that, ask your agent to use $agent-plugin-builder and it can scaffold plugin repos with skills, adapters, installers, docs, tests, and sponsor-ready project surfaces.</p>
       </div>
 
       <div class="usage-steps">
         <article class="usage-card">
           <div class="usage-card-head">
             <span>01</span>
-            <button class="copy-button" type="button" data-copy-target="usage-create-command">Copy</button>
+            <button class="copy-button" type="button" data-copy-target="usage-install-builder-command">Copy</button>
           </div>
-          <h3>Create a plugin repo</h3>
-          <pre><code id="usage-create-command">npx github:Kokoabassplayer/agent-plugin-builder create visual-evidence-kit --description "Capture proof for reviewers."</code></pre>
+          <h3>Install the builder skill</h3>
+          <pre><code id="usage-install-builder-command">npx github:Kokoabassplayer/agent-plugin-builder install --target codex</code></pre>
         </article>
 
         <article class="usage-card">
           <div class="usage-card-head">
             <span>02</span>
-            <button class="copy-button" type="button" data-copy-target="usage-install-command">Copy</button>
+            <button class="copy-button" type="button" data-copy-target="usage-prompt-command">Copy</button>
           </div>
-          <h3>Install the generated skill</h3>
-          <p>Run the target line for your harness from inside the generated repo.</p>
-          <pre><code id="usage-install-command">cd visual-evidence-kit
-node packages/installer/bin/install.mjs --target codex
-node packages/installer/bin/install.mjs --target claude-code
-node packages/installer/bin/install.mjs --target openclaw
-node packages/installer/bin/install.mjs --target gemini-cli</code></pre>
+          <h3>Use it in your agent</h3>
+          <p>Start a fresh agent session after installing, then invoke the builder skill by name.</p>
+          <pre><code id="usage-prompt-command">Use $agent-plugin-builder to create a plugin repo for visual evidence comments.</code></pre>
         </article>
 
         <article class="usage-card">
           <div class="usage-card-head">
             <span>03</span>
-            <button class="copy-button" type="button" data-copy-target="usage-prompt-command">Copy</button>
+            <button class="copy-button" type="button" data-copy-target="usage-create-command">Copy</button>
           </div>
-          <h3>Use it in your agent</h3>
-          <p>Open a fresh agent session after installing, then invoke the skill by name in your prompt.</p>
-          <pre><code id="usage-prompt-command">Use $visual-evidence-kit to capture visual evidence for this PR.</code></pre>
+          <h3>Create a plugin repo directly</h3>
+          <pre><code id="usage-create-command">npx github:Kokoabassplayer/agent-plugin-builder create visual-evidence-kit --description "Capture proof for reviewers."</code></pre>
+        </article>
+
+        <article class="usage-card">
+          <div class="usage-card-head">
+            <span>04</span>
+            <button class="copy-button" type="button" data-copy-target="usage-install-generated-command">Copy</button>
+          </div>
+          <h3>Install the generated skill</h3>
+          <p>Run the target line for your harness from inside the generated repo.</p>
+          <pre><code id="usage-install-generated-command">cd visual-evidence-kit
+node packages/installer/bin/install.mjs --target codex</code></pre>
         </article>
       </div>
     </section>
@@ -170,7 +176,7 @@ node packages/installer/bin/install.mjs --target gemini-cli</code></pre>
 
         <div class="floating-previews" aria-label="Generated repository preview cards">
           <figure class="preview-card preview-one">
-            <img src="assets/agent-plugin-builder-detail.png" width="1536" height="1024" alt="Generated plugin planning board">
+            <img src="assets/universal-plugin-builder-detail.svg" width="1536" height="1024" alt="Generated plugin planning board">
           </figure>
           <div class="preview-card preview-code">
             <span>created files</span>
@@ -180,7 +186,7 @@ docs/index.html
 .github/workflows/check.yml</code></pre>
           </div>
           <figure class="preview-card preview-two">
-            <img src="assets/agent-plugin-builder-hero.png" width="1536" height="1024" alt="Agent plugin builder workspace">
+            <img src="assets/universal-plugin-builder-hero.svg" width="1536" height="1024" alt="Agent plugin builder workspace">
           </figure>
         </div>
       </div>
@@ -239,18 +245,18 @@ node packages/installer/bin/install.mjs --target openclaw</code></pre>
       </div>
     </section>
 
-    <section class="support shell" aria-labelledby="support-title">
+    <section class="support shell" id="sponsor" aria-labelledby="support-title">
       <div class="support-copy">
         <p class="eyebrow">Support the project</p>
         <h2 id="support-title">Keep the builder open and useful.</h2>
-        <p>Sponsor the work if this helps your team turn private agent workflows into shareable tools.</p>
+        <p>If this builder helps your team turn private agent workflows into shareable tools, sponsorship supports examples, documentation, installer polish, compatibility testing, and templates without creating a support SLA or custom-work guarantee.</p>
         <div class="support-actions">
-          <a class="button primary" href="https://github.com/sponsors/Kokoabassplayer">Sponsor</a>
+          <a class="button primary" href="https://github.com/sponsors/Kokoabassplayer">Sponsor on GitHub</a>
           <a class="button secondary" href="https://github.com/Kokoabassplayer/agent-plugin-builder">Repository</a>
         </div>
       </div>
       <figure class="support-visual">
-        <img src="assets/agent-plugin-builder-hero.png" width="1536" height="1024" alt="Dark product image for Agent Plugin Builder">
+        <img src="assets/universal-plugin-builder-hero.svg" width="1536" height="1024" alt="Universal plugin creation flow for Agent Plugin Builder">
       </figure>
     </section>
   </main>
@@ -263,9 +269,10 @@ node packages/installer/bin/install.mjs --target openclaw</code></pre>
       <a href="#builder">Builder</a>
       <a href="#examples">Examples</a>
       <a href="https://github.com/Kokoabassplayer/agent-plugin-builder">GitHub</a>
+      <a href="#sponsor">Sponsor</a>
     </nav>
   </footer>
 
-  <script src="site.js?v=20260625c" defer></script>
+  <script src="site.js?v=20260625g" defer></script>
 </body>
 </html>

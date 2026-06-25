@@ -9,6 +9,16 @@ description: "Use when the user wants to create, scaffold, or package a cross-ha
 
 Scaffold cross-harness AI plugin projects that use Agent Skills as the portable core and harness adapters for distribution.
 
+## Install This Builder Skill
+
+When setting up this workflow for a harness, install this repo's own skill first:
+
+```bash
+npx github:Kokoabassplayer/agent-plugin-builder install --target codex
+```
+
+Supported targets are `codex`, `claude-code`, `openclaw`, `gemini-cli`, `generic`, and `all`.
+
 ## Workflow
 
 1. Clarify the plugin name, purpose, and target harnesses.

@@ -949,17 +949,17 @@ input:focus-visible {
   }
 
   .hero {
-    gap: 30px;
-    padding: 74px 0 52px;
+    gap: 20px;
+    padding: 32px 0 24px;
   }
 
   h1 {
     max-width: 10ch;
-    font-size: 54px;
+    font-size: 44px;
   }
 
   .hero-subtitle {
-    font-size: 23px;
+    font-size: 21px;
   }
 
   .hero-body,
@@ -975,13 +975,24 @@ input:focus-visible {
     width: 100%;
   }
 
-  .hero-actions .button,
+  .hero-actions {
+    gap: 8px;
+    margin-top: 24px;
+  }
+
+  .hero-actions .button {
+    flex: 1 1 calc(50% - 8px);
+    min-width: 0;
+    padding: 0 12px;
+    font-size: 14px;
+  }
+
   .support-actions .button {
     flex: 1 1 0;
   }
 
   .hero-gallery {
-    min-height: 430px;
+    min-height: 200px;
   }
 
   .hero-frame-main {
@@ -990,10 +1001,15 @@ input:focus-visible {
 
   .hero-command {
     width: auto;
-    right: 12px;
-    bottom: 16px;
-    left: 12px;
-    padding: 14px;
+    right: 8px;
+    bottom: 8px;
+    left: 8px;
+    padding: 12px;
+  }
+
+  .hero-command code {
+    font-size: 12px;
+    line-height: 1.45;
   }
 
   .hero-frame-float {
@@ -1094,7 +1110,7 @@ input:focus-visible {
   }
 
   .hero-actions .button {
-    flex-basis: 100%;
+    flex-basis: calc(50% - 8px);
   }
 
   .command-output pre,
