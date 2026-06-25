@@ -3,58 +3,169 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Scaffold cross-harness AI plugins with Agent Skills, adapters, installers, docs, and tests.">
+  <meta name="description" content="Agent Plugin Builder scaffolds portable AI plugin repos with skills, adapters, installers, docs, and tests.">
+  <meta property="og:title" content="Agent Plugin Builder">
+  <meta property="og:description" content="One scaffold for every agent. Create portable AI plugin repos in one command.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://kokoabassplayer.github.io/agent-plugin-builder/">
   <title>Agent Plugin Builder</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <header class="site-header">
-    <nav class="shell nav">
-      <a class="brand" href="#top"><span class="mark" aria-hidden="true"></span><span>Agent Plugin Builder</span></a>
-      <div class="links">
+    <nav class="shell nav" aria-label="Primary navigation">
+      <a class="brand" href="#top" aria-label="Agent Plugin Builder home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>Agent Plugin Builder</span>
+      </a>
+      <div class="nav-links">
         <a href="#install">Install</a>
         <a href="#structure">Structure</a>
+        <a href="#workflow">Workflow</a>
         <a href="https://github.com/Kokoabassplayer/agent-plugin-builder">GitHub</a>
-        <a href="https://github.com/sponsors/Kokoabassplayer">Sponsor</a>
       </div>
     </nav>
   </header>
+
   <main id="top">
-    <section class="hero shell">
-      <div>
-        <p class="eyebrow">Cross-harness AI tooling</p>
-        <h1>Build once. Ship to every AI harness.</h1>
-        <p class="lead">Scaffold Agent Skills projects with adapters for Claude Code, Codex, OpenClaw, Gemini CLI, and generic skill-compatible agents.</p>
-        <div class="actions">
-          <a class="button primary" href="#install">Install</a>
-          <a class="button secondary" href="https://github.com/Kokoabassplayer/agent-plugin-builder">View on GitHub</a>
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="kicker">Portable agent plugins</p>
+        <h1 id="hero-title">Scaffold once. Install everywhere.</h1>
+        <p class="lead">A repo generator for Agent Skills, harness adapters, installers, docs, and tests.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#install">Install</a>
+          <a class="button button-secondary" href="https://github.com/Kokoabassplayer/agent-plugin-builder">GitHub</a>
         </div>
       </div>
-      <div class="terminal" aria-label="Example command">
-        <pre><code>npx github:Kokoabassplayer/agent-plugin-builder create my-plugin
 
-creates skills/, packages/, adapters/, installers/, docs/, tests/</code></pre>
+      <aside class="hero-visual" aria-label="Agent Plugin Builder visual preview">
+        <img
+          src="assets/agent-plugin-builder-hero.png"
+          width="1536"
+          height="1024"
+          alt="A dark developer workbench with a laptop, adapter blocks, and plugin architecture sketches"
+          fetchpriority="high"
+          decoding="async">
+        <div class="command-card" aria-label="Quick start command">
+          <span>run this</span>
+          <code>npx github:Kokoabassplayer/agent-plugin-builder create my-plugin</code>
+        </div>
+      </aside>
+    </section>
+
+    <section class="compat shell" aria-label="Compatible agent harnesses">
+      <span>Claude Code</span>
+      <span>Codex</span>
+      <span>OpenClaw</span>
+      <span>Gemini CLI</span>
+      <span>Agent Skills</span>
+    </section>
+
+    <section class="install-section shell" id="install" aria-labelledby="install-title">
+      <div class="install-layout">
+        <div class="section-intro">
+          <p class="section-label">One command</p>
+          <h2 id="install-title">Start a real plugin repo, not a loose folder.</h2>
+          <p>The scaffold gives agents a stable skill core and gives humans the files they expect to review.</p>
+        </div>
+
+        <div class="install-card">
+          <div class="install-card-head">
+            <span>terminal</span>
+            <button class="copy-button" type="button" data-copy-command="npx github:Kokoabassplayer/agent-plugin-builder create review-proof-kit">Copy</button>
+          </div>
+          <pre><code>npx github:Kokoabassplayer/agent-plugin-builder create review-proof-kit</code></pre>
+        </div>
       </div>
     </section>
-    <section class="band">
-      <div class="shell split">
-        <h2>Agent Skills stay portable.</h2>
-        <p>Harness-specific plugin files are adapters. The generated project keeps the reusable skill instructions and deterministic scripts at the center.</p>
+
+    <section class="manifesto" aria-labelledby="manifesto-title">
+      <div class="shell manifesto-inner">
+        <h2 id="manifesto-title"><span>Escape</span><span>the one-off</span><span>plugin repo.</span></h2>
       </div>
     </section>
-    <section class="section shell" id="install">
-      <h2>One command</h2>
-      <pre><code>npx github:Kokoabassplayer/agent-plugin-builder create review-proof-kit --description "Capture proof for reviewers."</code></pre>
+
+    <section class="anatomy shell" id="structure" aria-labelledby="structure-title">
+      <div class="section-intro wide">
+        <p class="section-label">Generated structure</p>
+        <h2 id="structure-title">The boring parts are the product.</h2>
+        <p>Every generated repo starts with a portable skill, then wraps it with the adapters, installers, and proof needed for public use.</p>
+      </div>
+
+      <div class="bento" aria-label="Generated project structure">
+        <article class="tile tile-large">
+          <h3>Skill-first core</h3>
+          <p>A valid SKILL.md sits at the center, with space for scripts, references, assets, and examples.</p>
+          <pre><code>skills/
+  my-plugin/
+    SKILL.md
+    scripts/
+    references/
+packages/
+  installer/
+.github/
+  workflows/</code></pre>
+        </article>
+
+        <article class="tile tile-accent">
+          <h3>Adapters without drift</h3>
+          <p>Starter files for Codex, Claude Code, OpenClaw, Gemini CLI, and generic skill-compatible agents.</p>
+        </article>
+
+        <article class="tile tile-photo">
+          <img
+            src="assets/agent-plugin-builder-detail.png"
+            width="1536"
+            height="1024"
+            alt="A close view of plugin architecture notes, modular blocks, and a command-line workspace"
+            loading="lazy"
+            decoding="async">
+        </article>
+
+        <article class="tile">
+          <h3>Installer package</h3>
+          <p>Node-first installer plus shell and PowerShell wrappers for Windows, macOS, and Linux.</p>
+        </article>
+
+        <article class="tile tile-quiet">
+          <h3>Review-ready output</h3>
+          <p>README, license, tests, package metadata, and GitHub Pages docs are scaffolded from the start.</p>
+        </article>
+      </div>
     </section>
-    <section class="section shell" id="structure">
-      <h2>Generated structure</h2>
-      <div class="grid">
-        <article><h3>Skills core</h3><p>Valid `SKILL.md` plus UI metadata and room for scripts, references, and assets.</p></article>
-        <article><h3>Harness adapters</h3><p>Starter files for Claude Code, Codex, OpenClaw, Gemini CLI, and generic Agent Skills.</p></article>
-        <article><h3>Installer package</h3><p>Node-first installer with shell and PowerShell wrappers for Windows, macOS, and Linux.</p></article>
+
+    <section class="workflow shell" id="workflow" aria-labelledby="workflow-title">
+      <div>
+        <p class="section-label">Workflow</p>
+        <h2 id="workflow-title">From idea to installable repo.</h2>
+      </div>
+      <ol class="flow-list">
+        <li><strong>Name it.</strong><span>Create a plugin package with the right folder layout.</span></li>
+        <li><strong>Write the skill.</strong><span>Put the reusable agent behavior in SKILL.md first.</span></li>
+        <li><strong>Wire adapters.</strong><span>Expose the same capability to each harness without rewriting the core.</span></li>
+        <li><strong>Ship proof.</strong><span>Run checks, publish docs, and give users one command to install.</span></li>
+      </ol>
+    </section>
+
+    <section class="final-cta shell" aria-labelledby="cta-title">
+      <div>
+        <p class="section-label">Open source</p>
+        <h2 id="cta-title">Make the next skill installable.</h2>
+        <p>Use the scaffold for visual evidence tools, finance review helpers, internal agents, or public AI workflows.</p>
+      </div>
+      <div class="final-actions">
+        <a class="button button-primary" href="https://github.com/Kokoabassplayer/agent-plugin-builder">View repository</a>
+        <a class="button button-secondary" href="https://github.com/sponsors/Kokoabassplayer">Sponsor</a>
       </div>
     </section>
   </main>
-  <footer class="footer shell"><span>MIT licensed.</span><a href="https://github.com/Kokoabassplayer/agent-plugin-builder">GitHub repository</a></footer>
+
+  <footer class="footer shell">
+    <span>MIT licensed.</span>
+    <a href="https://kokoabassplayer.github.io/agent-plugin-builder/">agent-plugin-builder</a>
+  </footer>
+
+  <script src="site.js" defer></script>
 </body>
 </html>
