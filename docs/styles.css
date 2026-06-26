@@ -161,17 +161,18 @@ input {
 }
 
 .hero {
-  min-height: calc(100dvh - 24px);
+  min-height: auto;
   display: grid;
-  grid-template-columns: minmax(0, 0.92fr) minmax(480px, 1.08fr);
-  gap: 54px;
+  grid-template-columns: minmax(0, 0.94fr) minmax(480px, 1.06fr);
+  gap: 50px;
   align-items: center;
-  padding: 96px 0 64px;
+  padding: 82px 0 50px;
 }
 
 
 .hero-copy,
 .hero-gallery,
+.hero-install,
 .usage-copy,
 .usage-steps,
 .usage-card,
@@ -216,10 +217,10 @@ h3 {
 }
 
 h1 {
-  max-width: 8.6ch;
-  margin-bottom: 24px;
-  font-size: 104px;
-  line-height: 0.84;
+  max-width: 11.5ch;
+  margin-bottom: 22px;
+  font-size: 92px;
+  line-height: 0.9;
   font-weight: 880;
 }
 
@@ -299,9 +300,57 @@ input:focus-visible {
   background: rgb(247 243 235 / 11%);
 }
 
+.hero-install {
+  max-width: 620px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 14px;
+  margin-top: 22px;
+  border: 1px solid rgb(247 243 235 / 11%);
+  border-radius: var(--radius-sm);
+  padding: 14px;
+  background:
+    linear-gradient(135deg, rgb(255 223 110 / 10%), transparent 34%),
+    rgb(8 9 12 / 78%);
+  box-shadow:
+    inset 0 1px 0 rgb(247 243 235 / 8%),
+    0 18px 52px rgb(0 0 0 / 28%);
+}
+
+.hero-install div {
+  min-width: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.hero-install span,
+.command-head span,
+.preview-code span {
+  color: var(--accent);
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.hero-install code,
+.command-output code,
+.preview-code code {
+  color: var(--ink);
+  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.hero-install code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 .hero-gallery {
   position: relative;
-  min-height: 760px;
+  min-height: clamp(480px, 49vw, 640px);
 }
 
 .hero-frame,
@@ -317,62 +366,25 @@ input:focus-visible {
 
 .hero-frame-main {
   position: absolute;
-  inset: 0 0 0 82px;
+  inset: 0;
+  display: grid;
+  place-items: center;
 }
 
-.hero-frame-main img,
-.hero-frame-float img,
+.hero-frame-main img {
+  width: 100%;
+  height: 100%;
+  padding: clamp(8px, 2vw, 24px);
+  object-fit: contain;
+  filter: saturate(0.92) contrast(1.04);
+}
+
 .preview-card img,
 .support-visual img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: saturate(0.9) contrast(1.04);
-}
-
-.hero-command {
-  position: absolute;
-  left: 0;
-  bottom: 74px;
-  z-index: 2;
-  width: min(540px, 86%);
-  display: grid;
-  gap: 10px;
-  border: 1px solid rgb(247 243 235 / 11%);
-  border-radius: var(--radius-sm);
-  padding: 20px;
-  background: rgb(8 9 12 / 82%);
-  box-shadow: 0 24px 70px rgb(0 0 0 / 38%);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-}
-
-.hero-command span,
-.command-head span,
-.preview-code span {
-  color: var(--accent);
-  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
-  font-size: 12px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.hero-command code,
-.command-output code,
-.preview-code code {
-  color: var(--ink);
-  font-family: "Cascadia Mono", "SFMono-Regular", Consolas, monospace;
-  font-size: 14px;
-  line-height: 1.65;
-}
-
-.hero-frame-float {
-  position: absolute;
-  right: 18px;
-  bottom: 0;
-  z-index: 3;
-  width: 312px;
-  height: 218px;
 }
 
 .sponsors {
@@ -830,12 +842,11 @@ input:focus-visible {
 
 @media (prefers-reduced-motion: no-preference) {
   .hero-copy,
+  .hero-install,
   .hero-frame-main,
-  .hero-command,
   .usage-copy,
   .usage-steps,
   .usage-card,
-  .hero-frame-float,
   .sponsors,
   .works-copy,
   .agent-board,
@@ -851,9 +862,8 @@ input:focus-visible {
     animation: rise 720ms cubic-bezier(0.16, 1, 0.3, 1) both;
   }
 
-  .hero-frame-main { animation-delay: 80ms; }
-  .hero-command { animation-delay: 140ms; }
-  .hero-frame-float { animation-delay: 220ms; }
+  .hero-install { animation-delay: 70ms; }
+  .hero-frame-main { animation-delay: 140ms; }
   .manifesto h2 span:nth-child(2) { animation-delay: 80ms; }
   .manifesto h2 span:nth-child(3) { animation-delay: 160ms; }
 
@@ -894,8 +904,8 @@ input:focus-visible {
   }
 
   h1 {
-    max-width: 11ch;
-    font-size: 76px;
+    max-width: 11.5ch;
+    font-size: 72px;
   }
 
   .works h2,
@@ -949,13 +959,14 @@ input:focus-visible {
   }
 
   .hero {
-    gap: 20px;
-    padding: 32px 0 24px;
+    gap: 16px;
+    padding: 22px 0 14px;
   }
 
   h1 {
-    max-width: 10ch;
-    font-size: 44px;
+    max-width: 100%;
+    font-size: 40px;
+    line-height: 0.95;
   }
 
   .hero-subtitle {
@@ -967,7 +978,11 @@ input:focus-visible {
   .outputs-copy p,
   .builder-copy p,
   .support-copy p {
-    font-size: 18px;
+    font-size: 17px;
+  }
+
+  .hero-body {
+    line-height: 1.42;
   }
 
   .hero-actions,
@@ -991,29 +1006,28 @@ input:focus-visible {
     flex: 1 1 0;
   }
 
-  .hero-gallery {
-    min-height: 200px;
-  }
-
-  .hero-frame-main {
-    inset: 0;
-  }
-
-  .hero-command {
-    width: auto;
-    right: 8px;
-    bottom: 8px;
-    left: 8px;
+  .hero-install {
+    grid-template-columns: minmax(0, 1fr) auto;
+    margin-top: 18px;
     padding: 12px;
   }
 
-  .hero-command code {
+  .hero-install code {
     font-size: 12px;
     line-height: 1.45;
   }
 
-  .hero-frame-float {
-    display: none;
+  .hero-gallery {
+    min-height: 0;
+    aspect-ratio: 16 / 9;
+  }
+
+  .hero-frame-main img {
+    padding: 6px;
+  }
+
+  .hero-frame-main {
+    inset: 0;
   }
 
   .sponsors {

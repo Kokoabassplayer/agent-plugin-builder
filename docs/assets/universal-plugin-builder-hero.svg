@@ -1,70 +1,65 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 1024" role="img" aria-labelledby="title desc">
   <title id="title">Universal plugin creation flow</title>
-  <desc id="desc">Agent Plugin Builder creates one Agent Skill core, then packages adapters, installers, docs, and tests for multiple AI harnesses.</desc>
-  <rect width="1536" height="1024" fill="#06070a"/>
+  <desc id="desc">Agent Plugin Builder installs as one skill core, then produces adapters, installers, docs, tests, and funding-ready plugin repos for multiple AI harnesses.</desc>
   <defs>
     <linearGradient id="accent" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#ffdf6e"/>
       <stop offset="1" stop-color="#f36d38"/>
     </linearGradient>
-    <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
-      <feDropShadow dx="0" dy="28" stdDeviation="34" flood-color="#06070a" flood-opacity="0.38"/>
+    <linearGradient id="panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#171b22"/>
+      <stop offset="1" stop-color="#0c1117"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="32" stdDeviation="32" flood-color="#06070a" flood-opacity="0.38"/>
     </filter>
+    <pattern id="grid" width="128" height="128" patternUnits="userSpaceOnUse">
+      <path d="M128 0H0V128" fill="none" stroke="#f7f3eb" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
   </defs>
-  <g opacity="0.18">
-    <path d="M0 174H1536M0 344H1536M0 514H1536M0 684H1536M0 854H1536M192 0V1024M384 0V1024M576 0V1024M768 0V1024M960 0V1024M1152 0V1024M1344 0V1024" stroke="#f7f3eb" stroke-width="1"/>
-  </g>
-  <circle cx="258" cy="160" r="210" fill="#ffdf6e" opacity="0.12"/>
-  <circle cx="1278" cy="828" r="260" fill="#f36d38" opacity="0.12"/>
 
-  <g filter="url(#soft)">
-    <rect x="520" y="322" width="496" height="302" rx="36" fill="#101216" stroke="#ffdf6e" stroke-opacity="0.58" stroke-width="2"/>
-    <rect x="558" y="360" width="420" height="72" rx="18" fill="url(#accent)"/>
-    <text x="768" y="404" text-anchor="middle" fill="#141006" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="32" font-weight="800">Agent Plugin Builder</text>
-    <text x="768" y="482" text-anchor="middle" fill="#f7f3eb" font-family="Cascadia Mono, Consolas, monospace" font-size="24" font-weight="700">skills/agent-plugin-builder</text>
-    <text x="768" y="529" text-anchor="middle" fill="#a5a39e" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="26">one portable skill core</text>
-    <text x="768" y="574" text-anchor="middle" fill="#a5a39e" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="26">generates installable plugin repos</text>
-  </g>
+  <rect width="1536" height="1024" fill="#06070a"/>
+  <rect x="96" y="76" width="1344" height="872" rx="52" fill="#080b10" stroke="#f7f3eb" stroke-opacity="0.08"/>
+  <rect x="96" y="76" width="1344" height="872" rx="52" fill="url(#grid)"/>
+  <circle cx="205" cy="174" r="210" fill="#ffdf6e" opacity="0.07"/>
+  <circle cx="1308" cy="842" r="260" fill="#f36d38" opacity="0.08"/>
 
-  <g stroke="#ffdf6e" stroke-width="3" stroke-linecap="round" opacity="0.88">
-    <path d="M520 474H278"/>
-    <path d="M1016 474H1258"/>
-    <path d="M768 322V182"/>
-    <path d="M768 624V842"/>
-    <path d="M608 624L376 790"/>
-    <path d="M928 624L1160 790"/>
+  <g stroke="#ffdf6e" stroke-width="3" stroke-linecap="round" opacity="0.58">
+    <path d="M768 286V210"/>
+    <path d="M402 504H302"/>
+    <path d="M1134 504H1234"/>
+    <path d="M768 696V794"/>
   </g>
 
-  <g font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="25" font-weight="800" fill="#f7f3eb">
+  <g filter="url(#shadow)">
+    <rect x="402" y="286" width="732" height="410" rx="42" fill="url(#panel)" stroke="#ffdf6e" stroke-opacity="0.42" stroke-width="2"/>
+    <rect x="450" y="338" width="636" height="84" rx="22" fill="url(#accent)"/>
+    <text x="768" y="392" text-anchor="middle" fill="#141006" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="40" font-weight="850">Agent Plugin Builder</text>
+    <text x="768" y="490" text-anchor="middle" fill="#f7f3eb" font-family="Cascadia Mono, Consolas, monospace" font-size="28" font-weight="750">skills/agent-plugin-builder</text>
+    <text x="768" y="552" text-anchor="middle" fill="#c9c4b8" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="30" font-weight="650">one portable skill core</text>
+    <text x="768" y="604" text-anchor="middle" fill="#9f9b91" font-family="Aptos, Segoe UI, Arial, sans-serif" font-size="28">creates installable plugin repos</text>
+  </g>
+
+  <g font-family="Aptos, Segoe UI, Arial, sans-serif" filter="url(#shadow)">
     <g>
-      <rect x="92" y="392" width="284" height="164" rx="28" fill="#171a20" stroke="#292d35"/>
-      <text x="234" y="462" text-anchor="middle">SKILL.md</text>
-      <text x="234" y="506" text-anchor="middle" fill="#a5a39e" font-size="20" font-weight="500">instructions first</text>
+      <rect x="548" y="118" width="440" height="132" rx="30" fill="#151921" stroke="#292d35"/>
+      <text x="768" y="178" text-anchor="middle" fill="#f7f3eb" font-size="28" font-weight="800">Install builder skill</text>
+      <text x="768" y="216" text-anchor="middle" fill="#a5a39e" font-size="21" font-family="Cascadia Mono, Consolas, monospace">npx ... install --target codex</text>
     </g>
     <g>
-      <rect x="1160" y="392" width="284" height="164" rx="28" fill="#171a20" stroke="#292d35"/>
-      <text x="1302" y="462" text-anchor="middle">adapters</text>
-      <text x="1302" y="506" text-anchor="middle" fill="#a5a39e" font-size="20" font-weight="500">Codex, Claude, Gemini</text>
+      <rect x="142" y="418" width="296" height="172" rx="30" fill="#151921" stroke="#292d35"/>
+      <text x="290" y="489" text-anchor="middle" fill="#f7f3eb" font-size="28" font-weight="800">Skill core</text>
+      <text x="290" y="528" text-anchor="middle" fill="#a5a39e" font-size="21">SKILL.md plus references</text>
     </g>
     <g>
-      <rect x="602" y="72" width="332" height="132" rx="28" fill="#171a20" stroke="#292d35"/>
-      <text x="768" y="132" text-anchor="middle">installer</text>
-      <text x="768" y="170" text-anchor="middle" fill="#a5a39e" font-size="20" font-weight="500">npx install target</text>
+      <rect x="1098" y="418" width="296" height="172" rx="30" fill="#151921" stroke="#292d35"/>
+      <text x="1246" y="489" text-anchor="middle" fill="#f7f3eb" font-size="28" font-weight="800">Adapters</text>
+      <text x="1246" y="528" text-anchor="middle" fill="#a5a39e" font-size="21">Codex, Claude, Gemini</text>
     </g>
     <g>
-      <rect x="602" y="806" width="332" height="132" rx="28" fill="#171a20" stroke="#292d35"/>
-      <text x="768" y="866" text-anchor="middle">tests</text>
-      <text x="768" y="904" text-anchor="middle" fill="#a5a39e" font-size="20" font-weight="500">verify scaffold works</text>
-    </g>
-    <g>
-      <rect x="232" y="736" width="288" height="132" rx="28" fill="#171a20" stroke="#292d35"/>
-      <text x="376" y="796" text-anchor="middle">docs</text>
-      <text x="376" y="834" text-anchor="middle" fill="#a5a39e" font-size="20" font-weight="500">GitHub Pages ready</text>
-    </g>
-    <g>
-      <rect x="1016" y="736" width="288" height="132" rx="28" fill="#171a20" stroke="#292d35"/>
-      <text x="1160" y="796" text-anchor="middle">funding</text>
-      <text x="1160" y="834" text-anchor="middle" fill="#a5a39e" font-size="20" font-weight="500">Sponsors enabled</text>
+      <rect x="512" y="778" width="512" height="136" rx="30" fill="#151921" stroke="#292d35"/>
+      <text x="768" y="838" text-anchor="middle" fill="#f7f3eb" font-size="28" font-weight="800">Generated plugin repo</text>
+      <text x="768" y="878" text-anchor="middle" fill="#a5a39e" font-size="21">docs, tests, installers, funding</text>
     </g>
   </g>
 </svg>
